@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{535C967A-84E7-4148-9393-8A3DAC0C8FBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seventy7Diamonds.Payments.Api", "PaymentAPI\Seventy7Diamonds.Payments.Api\Seventy7Diamonds.Payments.Api.csproj", "{DA0E3725-3FD5-430E-A2C4-297D80D3DFC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seventy7Diamonds.Payments.Application", "PaymentAPI\Seventy7Diamonds.Payments.Application\Seventy7Diamonds.Payments.Application.csproj", "{6202C0F3-EE53-40FB-B1E0-DBE5D0277C9D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{719D1E69-24E3-4F7C-9BF8-DC3F888B2613}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seventy7Diamonds.Paymets.Application.Tests", "PaymentAPI\Seventy7Diamonds.Paymets.Application.Tests\Seventy7Diamonds.Paymets.Application.Tests.csproj", "{5AA0666F-4C48-404E-B538-F0F48A775EDF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53CB4A2E-C650-4AE8-A561-6D9BA798324E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53CB4A2E-C650-4AE8-A561-6D9BA798324E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53CB4A2E-C650-4AE8-A561-6D9BA798324E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53CB4A2E-C650-4AE8-A561-6D9BA798324E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F65FF76A-5E44-4536-81A2-E775A555FECC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F65FF76A-5E44-4536-81A2-E775A555FECC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F65FF76A-5E44-4536-81A2-E775A555FECC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F65FF76A-5E44-4536-81A2-E775A555FECC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA0E3725-3FD5-430E-A2C4-297D80D3DFC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA0E3725-3FD5-430E-A2C4-297D80D3DFC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA0E3725-3FD5-430E-A2C4-297D80D3DFC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA0E3725-3FD5-430E-A2C4-297D80D3DFC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6202C0F3-EE53-40FB-B1E0-DBE5D0277C9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6202C0F3-EE53-40FB-B1E0-DBE5D0277C9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6202C0F3-EE53-40FB-B1E0-DBE5D0277C9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6202C0F3-EE53-40FB-B1E0-DBE5D0277C9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AA0666F-4C48-404E-B538-F0F48A775EDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AA0666F-4C48-404E-B538-F0F48A775EDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AA0666F-4C48-404E-B538-F0F48A775EDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AA0666F-4C48-404E-B538-F0F48A775EDF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{53CB4A2E-C650-4AE8-A561-6D9BA798324E} = {535C967A-84E7-4148-9393-8A3DAC0C8FBC}
+		{F65FF76A-5E44-4536-81A2-E775A555FECC} = {535C967A-84E7-4148-9393-8A3DAC0C8FBC}
+		{DA0E3725-3FD5-430E-A2C4-297D80D3DFC0} = {535C967A-84E7-4148-9393-8A3DAC0C8FBC}
+		{6202C0F3-EE53-40FB-B1E0-DBE5D0277C9D} = {535C967A-84E7-4148-9393-8A3DAC0C8FBC}
+		{5AA0666F-4C48-404E-B538-F0F48A775EDF} = {719D1E69-24E3-4F7C-9BF8-DC3F888B2613}
+	EndGlobalSection
+EndGlobal

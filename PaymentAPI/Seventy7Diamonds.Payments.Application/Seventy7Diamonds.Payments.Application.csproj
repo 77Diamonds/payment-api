@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AssemblyName>Seventy7Diamonds.Payments.Application</AssemblyName>
+        <RootNamespace>Seventy7Diamonds.Payments.Application</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="Payments\Commands\" />
+      <Folder Include="Payments\Queries\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="CheckoutSDK" Version="4.6.0" />
+    </ItemGroup>
+
+</Project>
