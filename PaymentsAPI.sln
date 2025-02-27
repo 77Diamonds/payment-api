@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seventy7Diamonds.Payments.A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{719D1E69-24E3-4F7C-9BF8-DC3F888B2613}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seventy7Diamonds.Paymets.Application.Tests", "PaymentAPI\Seventy7Diamonds.Paymets.Application.Tests\Seventy7Diamonds.Paymets.Application.Tests.csproj", "{5AA0666F-4C48-404E-B538-F0F48A775EDF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seventy7Diamonds.Payments.Application.Tests", "PaymentAPI\Seventy7Diamonds.Payments.Application.Tests\Seventy7Diamonds.Payments.Application.Tests.csproj", "{5AA0666F-4C48-404E-B538-F0F48A775EDF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

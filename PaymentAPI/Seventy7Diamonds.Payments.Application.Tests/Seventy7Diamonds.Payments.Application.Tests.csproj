@@ -6,6 +6,8 @@
         <Nullable>enable</Nullable>
 
         <IsPackable>false</IsPackable>
+
+        <RootNamespace>Seventy7Diamonds.Paymets.Application.Tests</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
