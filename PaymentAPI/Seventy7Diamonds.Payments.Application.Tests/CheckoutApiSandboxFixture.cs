@@ -3,15 +3,14 @@
 namespace Seventy7Diamonds.Payments.Application.Tests;
 
 /// <summary>
-/// A fixture to be used on
+/// A fixture to be used on Checkout Sandbox
 /// </summary>
 public class CheckoutApiSandboxFixture : IDisposable
 {
-    public const string ClientID = "ack_usg74gyctmau3lzxmpm4lvuhju";
-    public const string PublicKey = "pk_sbox_g3iid7ew7clcwgyjn63gxhlc4mj";
-    public const string SecretKey = "sk_sbox_vbgt3aucy7xnj7kftnrhxjmhpm2";
-    public const string ProcessingChannelId = "pc_7b4tpe676mue3bao5nvj5ovzem";
-    public const string AuthURI = "https://access.sandbox.checkout.com/connect/token";
+    public const string PublicKey = "pk_sbox_szo5m4izt7xqr5g7uvc3j6wolit";
+    public const string SecretKey = "sk_sbox_vzsdl6tauei3bdkxftatbunr5al";
+    public const string ProcessingChannelId = "pc_d7u3ecyxckteldjo4a33dbqfby";
+    
     public readonly ICheckoutApi CheckoutApi;
 
     public CheckoutApiSandboxFixture()

@@ -1,8 +1,10 @@
+using System.Diagnostics;
 using Checkout.Common;
 using Checkout.Payments;
 using Checkout.Payments.Request;
 using Checkout.Payments.Request.Source; 
 using Checkout.Payments.Response;
+using Xunit.Abstractions;
 
 namespace Seventy7Diamonds.Payments.Application.Tests.Integration;
 
@@ -10,7 +12,7 @@ public class PaymentsRequestIntegrationTests
 {
     private readonly CheckoutApiSandboxFixture _apiSandboxFixture;
     private readonly IPaymentsClient _paymentsApi;
-    public PaymentsRequestIntegrationTests()
+    public PaymentsRequestIntegrationTests()      
     {
         _apiSandboxFixture = new CheckoutApiSandboxFixture();
         _paymentsApi = _apiSandboxFixture.CheckoutApi.PaymentsClient();
@@ -69,10 +71,10 @@ public class PaymentsRequestIntegrationTests
     {
         // arrange
         const int expectedHttpStatusCode = 201;
-        const string expectedResponseSummary = "Invalid Response";
+        const string expectedResponseSummary = "No security model";
         const bool expectedRiskFlagged = false;
         const bool expectedApprovedStatus = false;
-        const string expectedResponseCode = "20020";  // Declined response code
+        const string expectedResponseCode = "20082";  // Declined response code
         const PaymentStatus expectedPaymentStatus = PaymentStatus.Declined;
 
         var request = new PaymentRequest()
