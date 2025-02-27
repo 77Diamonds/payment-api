@@ -3,7 +3,7 @@ using Microsoft.Extensions.Logging;
 using SeventySevenDiamonds.Payments.Domain.Interfaces;
 using SeventySevenDiamonds.Payments.Domain.Models;
 
-namespace Seventy7Diamonds.Payment.Infrastructure.Services;
+namespace Seventy7Diamonds.Payment.Infrastructure.Services.CheckoutDotCom;
 
 /// <summary>
 /// High level abstraction layer to access Checkout.com api
