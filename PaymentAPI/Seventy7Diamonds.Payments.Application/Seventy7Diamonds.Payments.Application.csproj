@@ -9,12 +9,17 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Payments\Commands\" />
       <Folder Include="Payments\Queries\" />
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="14.0.0" />
       <PackageReference Include="CheckoutSDK" Version="4.6.0" />
+      <PackageReference Include="MediatR" Version="12.4.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Seventy7Diamonds.Payments.Domain\Seventy7Diamonds.Payments.Domain.csproj" />
     </ItemGroup>
 
 </Project>
