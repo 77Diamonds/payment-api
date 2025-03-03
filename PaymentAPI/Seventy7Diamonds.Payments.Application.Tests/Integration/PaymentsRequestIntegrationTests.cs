@@ -53,6 +53,7 @@ public class PaymentsRequestIntegrationTests
         };
         
         // act
+        PaymentResponse r;
         var response = await _paymentsApi.RequestPayment(request);
 
         // assert

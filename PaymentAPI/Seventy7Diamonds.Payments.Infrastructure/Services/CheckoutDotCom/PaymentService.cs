@@ -17,7 +17,7 @@ public class PaymentService(ICheckoutApi checkoutApi, ILogger<PaymentService> lo
         throw new NotImplementedException();
     }
 
-    public Task<PaymentTransactionStatus> GetPaymentStatus(Guid transactionId)
+    public Task<PaymentStatus> GetPaymentStatus(Guid transactionId)
     {
         throw new NotImplementedException();
     }
