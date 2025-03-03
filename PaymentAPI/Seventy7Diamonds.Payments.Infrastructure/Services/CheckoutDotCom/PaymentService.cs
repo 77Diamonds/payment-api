@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using SeventySevenDiamonds.Payments.Domain.Interfaces;
 using SeventySevenDiamonds.Payments.Domain.Models;
+using SeventySevenDiamonds.Payments.Domain.Models.Requests;
 
 namespace Seventy7Diamonds.Payment.Infrastructure.Services.CheckoutDotCom;
 
@@ -11,7 +12,7 @@ namespace Seventy7Diamonds.Payment.Infrastructure.Services.CheckoutDotCom;
 public class PaymentService(ICheckoutApi checkoutApi, ILogger<PaymentService> logger) : IPaymentService
 {
 
-    public Task<PaymentRequestResult> SendPaymentRequest(PaymentRequest paymentRequest)
+    public Task<PaymentRequestResult> SendPaymentRequest(AbstractPaymentRequest abstractPaymentRequest)
     {
         throw new NotImplementedException();
     }
