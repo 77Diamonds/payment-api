@@ -3,7 +3,7 @@ using SeventySevenDiamonds.Payments.Domain.Models.Source;
 
 namespace SeventySevenDiamonds.Payments.Domain.Models.Requests;
 
-public class CardPaymentRequest : AbstractPaymentRequest
+public class CardPaymentRequest : PaymentRequest<CardPaymentSource>
 {
-    public new required CardPaymentSource Source { get; set; }
+    
 }

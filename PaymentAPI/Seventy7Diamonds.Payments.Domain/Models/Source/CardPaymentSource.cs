@@ -3,7 +3,7 @@ using SeventySevenDiamonds.Payments.Domain.Models.PaymentSource;
 
 namespace SeventySevenDiamonds.Payments.Domain.Models.Source;
 
-public class CardPaymentSource : IPaymentSource
+public class CardPaymentSource : AbstractPaymentSource
 {
     public PaymentSourceType Type  => PaymentSourceType.Card;   
     

@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seventy7Diamonds.Payments.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seventy7Diamonds.Payments.Infrastructure", "PaymentAPI\Seventy7Diamonds.Payments.Infrastructure\Seventy7Diamonds.Payments.Infrastructure.csproj", "{D825CFDD-409A-49A9-9D37-C300988CBE57}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seventy7Diamonds.Payments.Infrastructure.Tests", "PaymentAPI\Seventy7Diamonds.Payments.Infrastructure.Tests\Seventy7Diamonds.Payments.Infrastructure.Tests.csproj", "{6B44281A-C6C5-4044-93D1-87323773FE70}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +50,10 @@ Global
 		{D825CFDD-409A-49A9-9D37-C300988CBE57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D825CFDD-409A-49A9-9D37-C300988CBE57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D825CFDD-409A-49A9-9D37-C300988CBE57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B44281A-C6C5-4044-93D1-87323773FE70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B44281A-C6C5-4044-93D1-87323773FE70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B44281A-C6C5-4044-93D1-87323773FE70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B44281A-C6C5-4044-93D1-87323773FE70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{53CB4A2E-C650-4AE8-A561-6D9BA798324E} = {535C967A-84E7-4148-9393-8A3DAC0C8FBC}
@@ -57,5 +63,6 @@ Global
 		{5AA0666F-4C48-404E-B538-F0F48A775EDF} = {719D1E69-24E3-4F7C-9BF8-DC3F888B2613}
 		{A5089FA8-5680-4289-817A-C615F695C9DD} = {535C967A-84E7-4148-9393-8A3DAC0C8FBC}
 		{D825CFDD-409A-49A9-9D37-C300988CBE57} = {535C967A-84E7-4148-9393-8A3DAC0C8FBC}
+		{6B44281A-C6C5-4044-93D1-87323773FE70} = {719D1E69-24E3-4F7C-9BF8-DC3F888B2613}
 	EndGlobalSection
 EndGlobal

@@ -1,10 +1,12 @@
 ﻿using SeventySevenDiamonds.Payments.Domain.Models.Common;
 using SeventySevenDiamonds.Payments.Domain.Models.PaymentSource;
+using SeventySevenDiamonds.Payments.Domain.Models.Source;
 
 namespace SeventySevenDiamonds.Payments.Domain.Models.Requests;
 
 
-public abstract class AbstractPaymentRequest
+public abstract class PaymentRequest<TPaymentSource> 
+    where TPaymentSource : AbstractPaymentSource
 {
     public long? Amount { get; set; }
  
@@ -16,7 +18,7 @@ public abstract class AbstractPaymentRequest
     
     public required string Reference { get; set; }
     
-    public IPaymentSource? Source { get; set; }
+    public required TPaymentSource Source { get; set; }
     
 }
 

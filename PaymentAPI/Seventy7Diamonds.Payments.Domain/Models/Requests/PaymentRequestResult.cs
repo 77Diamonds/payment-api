@@ -28,6 +28,8 @@ public class PaymentRequestResult
 
     public DateTime? ExpiresOn { get; set; }
     
+    public string? Reference { get; set; }
+    
     /*
     public RiskAssessment Risk { get; set; }
 
@@ -38,9 +40,7 @@ public class PaymentRequestResult
 
     public PaymentResponseBalances Balances { get; set; }
 
-    public DateTime? ProcessedOn { get; set; }
-
-    public string Reference { get; set; }
+    public DateTime? ProcessedOn { get; set; }    
 
     public PaymentProcessing Processing { get; set; }
 

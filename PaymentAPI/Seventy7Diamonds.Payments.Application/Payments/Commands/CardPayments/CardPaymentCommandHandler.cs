@@ -18,7 +18,7 @@ public class CardPaymentCommandHandler(
         //logger.LogInformation($"New card payment request arrived: {command.Reference}.");
         
         var request = mapper.Map<CardPaymentRequest>(command); 
-        var response = await paymentService.SendPaymentRequest(request);
+        var response = await paymentService.SendCardPaymentRequest(request);
         
         var result = mapper.Map<CardPaymentCommandResult>(response);
         return result;
