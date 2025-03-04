@@ -33,7 +33,7 @@ public class CheckoutPaymentServiceShould
     }
     
     [Fact]
-    public async Task Return_success_when_valid_card_used()
+    public async Task Return_success_when_valid_card_used_in_payment_request()
     {
         // arrange
         const string expectedResponseSummary = "Approved";
@@ -77,7 +77,7 @@ public class CheckoutPaymentServiceShould
 
     
     [Fact]
-    public async Task Return_error_when_expired_card_used()
+    public async Task Return_error_when_expired_card_used_in_payment_request()
     {
         // arrange
         const bool expectedApprovedStatus = false;
@@ -120,7 +120,7 @@ public class CheckoutPaymentServiceShould
     }
     
     [Fact]
-    public async Task Return_error_when_invalid_card_used()
+    public async Task Return_error_when_invalid_card_used_in_payment_request()
     {
         // arrange
         const bool expectedApprovedStatus = false;
