@@ -18,7 +18,7 @@ public class CardPaymentCommand : IRequest<CardPaymentCommandResult>
     
     public required string Reference { get; set; }
     
-    public CardPaymentSource Card { get; set; }
+    public required CardPaymentSource Card { get; set; }
 
     /*
     /// <summary>

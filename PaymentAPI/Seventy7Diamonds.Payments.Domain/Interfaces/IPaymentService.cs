@@ -6,6 +6,6 @@ namespace SeventySevenDiamonds.Payments.Domain.Interfaces;
 
 public interface IPaymentService
 {
-    Task<PaymentRequestResult> SendCardPaymentRequest(PaymentRequest<CardPaymentSource> paymentRequest);
+    Task<PaymentRequestResult> SendCardPaymentRequest(CardPaymentRequest request);
     Task<PaymentStatus> GetPaymentStatus(Guid transactionId);
 }

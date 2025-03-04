@@ -8,15 +8,12 @@ namespace Seventy7Diamonds.Payments.Application.Payments.Commands.CardPayments;
 
 public class CardPaymentCommandHandler(
     IPaymentService paymentService,
-    IMapper mapper,
-    ILogger<CardPaymentCommandHandler> logger)
+    IMapper mapper)
     : IRequestHandler<CardPaymentCommand, CardPaymentCommandResult>
 {
     
     public async Task<CardPaymentCommandResult> Handle(CardPaymentCommand command, CancellationToken cancellationToken)
     {
-        //logger.LogInformation($"New card payment request arrived: {command.Reference}.");
-        
         var request = mapper.Map<CardPaymentRequest>(command); 
         var response = await paymentService.SendCardPaymentRequest(request);
         

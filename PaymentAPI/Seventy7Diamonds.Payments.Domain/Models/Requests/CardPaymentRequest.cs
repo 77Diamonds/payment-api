@@ -1,9 +1,8 @@
-﻿using SeventySevenDiamonds.Payments.Domain.Models.PaymentSource;
-using SeventySevenDiamonds.Payments.Domain.Models.Source;
+﻿using SeventySevenDiamonds.Payments.Domain.Models.Source;
 
 namespace SeventySevenDiamonds.Payments.Domain.Models.Requests;
 
 public class CardPaymentRequest : PaymentRequest<CardPaymentSource>
 {
-    
+    public CardPaymentRequest() {}
 }
