@@ -1,5 +1,4 @@
 ﻿using Checkout.Payments.Response;
-using SeventySevenDiamonds.Payments.Domain.Models;
 using SeventySevenDiamonds.Payments.Domain.Models.Requests;
 using Domain = SeventySevenDiamonds.Payments.Domain.Models;
 
@@ -21,7 +20,7 @@ public static class PaymentResponseExtensions
             Amount = paymentResponse.Amount,
             Approved = paymentResponse.Approved,
             Currency = (Domain.Common.Currency?)paymentResponse.Currency,
-            PaymentType = (Domain.Requests.PaymentType?)paymentResponse.PaymentType,
+            PaymentType = (PaymentType?)paymentResponse.PaymentType,
             AuthCode = paymentResponse.AuthCode,
             ResponseCode = paymentResponse.ResponseCode,
             ResponseSummary = paymentResponse.ResponseSummary,
