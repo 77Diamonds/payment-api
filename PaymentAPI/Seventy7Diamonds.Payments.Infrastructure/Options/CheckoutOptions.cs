@@ -4,9 +4,8 @@ public sealed class CheckoutOptions
 {
     public CheckoutOptions(){}
     
-    public string SecretKey { get; set; }
-    public string PublicKey { get; set; }
-    public Checkout.Environment Environment { get; set; }
-    
-    public string ProcessingChannelId { get; set; }
+    public required string SecretKey { get; set; }
+    public required string PublicKey { get; set; }
+    public required Checkout.Environment Environment { get; set; }
+    public required string ProcessingChannelId { get; set; }
 }

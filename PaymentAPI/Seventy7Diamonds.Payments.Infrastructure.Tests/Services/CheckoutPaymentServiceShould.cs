@@ -61,7 +61,7 @@ public class CheckoutPaymentServiceShould
         };
         
         // act
-        var response = await paymentService.SendCardPaymentRequest(request);
+        var response = await paymentService.SendCardPaymentRequest(request, CancellationToken.None);
         
         // assert
         Assert.NotNull(response);
@@ -105,7 +105,7 @@ public class CheckoutPaymentServiceShould
         };
         
         // act
-        var response = await paymentService.SendCardPaymentRequest(request);
+        var response = await paymentService.SendCardPaymentRequest(request, CancellationToken.None);
 
         // assert
         Assert.NotNull(response);
@@ -148,7 +148,7 @@ public class CheckoutPaymentServiceShould
         };
         
         // act
-        var response = await paymentService.SendCardPaymentRequest(request);
+        var response = await paymentService.SendCardPaymentRequest(request, CancellationToken.None);
 
         // assert
         Assert.NotNull(response);
@@ -160,5 +160,38 @@ public class CheckoutPaymentServiceShould
         Assert.Equal(expectedReference, response.Reference);
         Assert.NotNull(response.Id);
         Assert.NotNull(response.ActionId);
+    }
+
+    [Fact]
+    public async Task Return_success_when_getting_valid_transaction_details()
+    {
+        // arrange
+        var paymentService = new PaymentService(_mockOptions.Object);
+        var request = new CardPaymentRequest()
+        {
+            Amount = 8105,
+            Currency = Currency.EUR,
+            PaymentType = PaymentType.Regular,
+            Description = "",
+            Reference = "",
+            Source = new CardPaymentSource
+            {
+                Number = "4659105569051157",
+                Cvv = "100",
+                ExpiryMonth = 1,
+                ExpiryYear = 2026,
+                Name = string.Empty,
+            }
+        };
+        
+        // act
+        var response = await paymentService.SendCardPaymentRequest(request, CancellationToken.None);
+        var details = await paymentService.GetPaymentDetails(response.Id, CancellationToken.None);
+        
+        // assert
+        Assert.NotNull(details);
+        Assert.Equal(response.Id, details.Id);
+        Assert.Equal(response.Status, details.Status);
+
     }
 }

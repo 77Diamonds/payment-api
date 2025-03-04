@@ -1,15 +1,10 @@
 ﻿using Checkout;
-using Checkout.Common;
 using Checkout.Payments;
-using Checkout.Payments.Request;
 using Microsoft.Extensions.Options;
 using Seventy7Diamonds.Payment.Infrastructure.Extensions;
 using Seventy7Diamonds.Payment.Infrastructure.Options;
 using SeventySevenDiamonds.Payments.Domain.Interfaces;
 using SeventySevenDiamonds.Payments.Domain.Models.Requests;
-using PaymentStatus = SeventySevenDiamonds.Payments.Domain.Models.Requests.PaymentStatus;
-using PaymentType = Checkout.Payments.PaymentType;
-using RequestCardSource = Checkout.Payments.Request.Source.RequestCardSource;
 
 namespace Seventy7Diamonds.Payment.Infrastructure.Services.CheckoutDotCom;
 
@@ -32,16 +27,18 @@ public class PaymentService : IPaymentService
         _paymentsApi = checkoutApi.PaymentsClient();
     }
 
-
-    public async Task<PaymentRequestResult> SendCardPaymentRequest(CardPaymentRequest request)
+    public async Task<PaymentRequestResult> SendCardPaymentRequest(CardPaymentRequest request, 
+        CancellationToken cancellationToken)
     {
         var paymentRequest = request.ToPaymentRequest(_options.ProcessingChannelId);
-        var response = await _paymentsApi.RequestPayment(paymentRequest);
+        var response = await _paymentsApi.RequestPayment(paymentRequest, null, cancellationToken);
         return response.ToPaymentRequestResult();
     }
 
-    public Task<PaymentStatus> GetPaymentStatus(Guid transactionId)
+    public async Task<GetPaymentDetails> GetPaymentDetails(string paymentId, 
+        CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        var response = await _paymentsApi.GetPaymentDetails(paymentId, cancellationToken);
+        return response.ToGetPaymentDetails();
     }
 }

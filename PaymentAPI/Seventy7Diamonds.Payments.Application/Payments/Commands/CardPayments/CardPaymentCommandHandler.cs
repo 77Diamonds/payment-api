@@ -15,7 +15,7 @@ public class CardPaymentCommandHandler(
     public async Task<CardPaymentCommandResult> Handle(CardPaymentCommand command, CancellationToken cancellationToken)
     {
         var request = mapper.Map<CardPaymentRequest>(command); 
-        var response = await paymentService.SendCardPaymentRequest(request);
+        var response = await paymentService.SendCardPaymentRequest(request, CancellationToken.None);
         
         var result = mapper.Map<CardPaymentCommandResult>(response);
         return result;
