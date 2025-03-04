@@ -21,14 +21,5 @@
   &lt;Assembly Path="C:\Users\fabia\.nuget\packages\checkoutsdk\4.6.0\lib\net6.0\CheckoutSdk.dll" /&gt;&#xD;
 &lt;/AssemblyExplorer&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=00b8320c_002D42f4_002D4dac_002Da7fa_002D77a4db30dee4/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Test1" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;Or&gt;&#xD;
-    &lt;ProjectFile&gt;5AA0666F-4C48-404E-B538-F0F48A775EDF/d:Integration/f:PaymentsRequestIntegrationTests.cs&lt;/ProjectFile&gt;&#xD;
-    &lt;TestAncestor&gt;&#xD;
-      &lt;TestId&gt;xUnit::6B44281A-C6C5-4044-93D1-87323773FE70::net8.0::Seventy7Diamonds.Payments.Infrastructure.Tests.CheckoutPaymentServiceUnitTests.SendPaymentRequest_ValidDebitCard_ReturnsSuccess&lt;/TestId&gt;&#xD;
-      &lt;TestId&gt;xUnit::6B44281A-C6C5-4044-93D1-87323773FE70::net8.0::Seventy7Diamonds.Payments.Infrastructure.Tests.Services.CheckoutPaymentServiceUnitTests.SendPaymentRequest_ValidDebitCard_ReturnsSuccess&lt;/TestId&gt;&#xD;
-      &lt;TestId&gt;xUnit::6B44281A-C6C5-4044-93D1-87323773FE70::net8.0::Seventy7Diamonds.Payments.Infrastructure.Tests.AutoMapper.AutoMapperTests&lt;/TestId&gt;&#xD;
-    &lt;/TestAncestor&gt;&#xD;
-    &lt;ProjectFile&gt;49A71BF8-EAF7-4C70-8063-8D0D1EBF1C0B/d:AutoMapper/f:AutoMapperTests.cs&lt;/ProjectFile&gt;&#xD;
-    &lt;ProjectFile&gt;6B44281A-C6C5-4044-93D1-87323773FE70/d:Services/f:CheckoutPaymentServiceUnitTests.cs&lt;/ProjectFile&gt;&#xD;
-  &lt;/Or&gt;&#xD;
+  &lt;Project Location="D:\77D\payment-api" Presentation="&amp;lt;tests&amp;gt;" /&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

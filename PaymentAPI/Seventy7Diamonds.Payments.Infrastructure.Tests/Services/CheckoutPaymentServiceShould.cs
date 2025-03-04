@@ -15,11 +15,11 @@ namespace Seventy7Diamonds.Payments.Infrastructure.Tests.Services;
 /// Test cards based on table available at
 /// https://www.checkout.com/docs/developer-resources/testing/test-cards
 /// </summary>
-public class CheckoutPaymentServiceUnitTests
+public class CheckoutPaymentServiceShould
 {
     private readonly Mock<IOptions<CheckoutOptions>> _mockOptions = new Mock<IOptions<CheckoutOptions>>();
     
-    public CheckoutPaymentServiceUnitTests()
+    public CheckoutPaymentServiceShould()
     {
         var checkoutOptions = new CheckoutOptions()
         {
@@ -33,7 +33,7 @@ public class CheckoutPaymentServiceUnitTests
     }
     
     [Fact]
-    public async Task SendPaymentRequest_ValidDebitCard_ReturnsSuccess()
+    public async Task Return_success_when_valid_card_used()
     {
         // arrange
         const string expectedResponseSummary = "Approved";
@@ -77,7 +77,7 @@ public class CheckoutPaymentServiceUnitTests
 
     
     [Fact]
-    public async Task SendPaymentRequest_ExpiredVisaDebitCard_ReturnsError()
+    public async Task Return_error_when_expired_card_used()
     {
         // arrange
         const bool expectedApprovedStatus = false;
@@ -120,7 +120,7 @@ public class CheckoutPaymentServiceUnitTests
     }
     
     [Fact]
-    public async Task SendPaymentRequest_InvalidCardNumber_ReturnsError()
+    public async Task Return_error_when_invalid_card_used()
     {
         // arrange
         const bool expectedApprovedStatus = false;
