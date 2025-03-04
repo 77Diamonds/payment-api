@@ -7,7 +7,7 @@ using Seventy7Diamonds.Payment.Infrastructure.Extensions;
 using Seventy7Diamonds.Payment.Infrastructure.Options;
 using SeventySevenDiamonds.Payments.Domain.Interfaces;
 using SeventySevenDiamonds.Payments.Domain.Models.Requests;
-using PaymentStatus = SeventySevenDiamonds.Payments.Domain.Models.PaymentStatus;
+using PaymentStatus = SeventySevenDiamonds.Payments.Domain.Models.Requests.PaymentStatus;
 using PaymentType = Checkout.Payments.PaymentType;
 using RequestCardSource = Checkout.Payments.Request.Source.RequestCardSource;
 

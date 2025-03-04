@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace SeventySevenDiamonds.Payments.Domain.Models;
+namespace SeventySevenDiamonds.Payments.Domain.Models.Requests;
 
 public enum PaymentStatus
 {
