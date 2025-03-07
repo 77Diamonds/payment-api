@@ -19,17 +19,6 @@ public class CardPaymentCommand : IRequest<CardPaymentCommandResult>
     public required string Reference { get; set; }
     
     public required CardPaymentSource Card { get; set; }
-
-    /*
-    /// <summary>
-    /// Maps from CardPaymentSource domain object
-    /// </summary>
-    /// <param name="profile"></param>
-    public void Mapping(Profile profile)
-    {
-        profile.CreateMap<CardPaymentCommand, CardPaymentRequest>()
-            .ForMember()
-    }
-    */
+    
 }
 
