@@ -14,16 +14,17 @@ public class CardPaymentCommandHandler(
     IMapper mapper)
     : IRequestHandler<CardPaymentCommand, CardPaymentCommandResult>
 {
-    
+
     public async Task<CardPaymentCommandResult> Handle(CardPaymentCommand command, CancellationToken cancellationToken)
     {
-        var request = command.ToRequest(); 
+        var request = command.ToRequest();
+
         var response = await paymentService.SendCardPaymentRequest(request, CancellationToken.None);
         await messagePublisher.Publish(new CardPaymentRequestSentEvent(
-            DateTimeOffset.UtcNow, 
-            request), cancellationToken);        
-        
-        var result = mapper.Map<CardPaymentCommandResult>(response);
-        return result;
+            DateTimeOffset.UtcNow,
+            request), cancellationToken);
+
+        return response.ToCardPaymentCommandResult();
     }
+
 }
