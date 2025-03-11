@@ -1,6 +1,9 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Abstractions;
 using Seventy7Diamonds.Payments.Api.Models;
+using Seventy7Diamonds.Payments.Application.Payments.Commands.CardPayments;
+using SeventySevenDiamonds.Payments.Domain.Models.Requests;
 
 namespace Seventy7Diamonds.Payments.Api.Controllers
 {
@@ -15,5 +18,12 @@ namespace Seventy7Diamonds.Payments.Api.Controllers
         {
             _mediator = mediator;    
         }
+
+        [HttpPost]
+        public async Task<IActionResult> PostCardPaymentCommand(CardPaymentCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        } 
     }
 }

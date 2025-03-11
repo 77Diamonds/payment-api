@@ -9,6 +9,9 @@
 
     <ItemGroup>
         <PackageReference Include="CheckoutSDK.Extensions.Microsoft" Version="4.6.0" />
+        <PackageReference Include="MassTransit" Version="8.3.7" />
+        <PackageReference Include="MassTransit.RabbitMQ" Version="8.3.7" />
+        <PackageReference Include="MassTransit.Redis" Version="8.3.7" />
         <PackageReference Include="MediatR" Version="12.4.1" />
         <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.1.0" />
         <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
@@ -23,6 +26,10 @@
 
     <ItemGroup>
       <Folder Include="Controllers\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Seventy7Diamonds.Payments.Application\Seventy7Diamonds.Payments.Application.csproj" />
     </ItemGroup>
 
 </Project>
