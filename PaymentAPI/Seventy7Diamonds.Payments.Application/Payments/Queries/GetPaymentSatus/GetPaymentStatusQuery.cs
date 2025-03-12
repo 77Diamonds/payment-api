@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Seventy7Diamonds.Payments.Application.Payments.Queries.CardPayments;
+namespace Seventy7Diamonds.Payments.Application.Payments.Queries.GetPaymentSatus;
 
 public class GetPaymentStatusQuery : IRequest<GetPaymentStatusQueryResult>
 {

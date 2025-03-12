@@ -1,5 +1,6 @@
 using CheckoutSDK.Extensions.Configuration;
 using MassTransit;
+using Seventy7Diamonds.Payment.Infrastructure;
 using Seventy7Diamonds.Payments.Api.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,18 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddCheckoutSdk(builder.Configuration);
-builder.Services.AddMassTransit(x =>
-{
-    x.UsingRabbitMq((context, cfg) =>
-    {
-        cfg.Host(builder.Configuration["RabbitMq:Host"], "/", h =>
-        {
-            h.Password(builder.Configuration["RabbitMq:Username"]!);
-            h.Password(builder.Configuration["RabbitMq:Password"]!);
-        });
-    });
-});
-    
+builder.Services.AddInfrastructureServices(builder.Configuration);
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())

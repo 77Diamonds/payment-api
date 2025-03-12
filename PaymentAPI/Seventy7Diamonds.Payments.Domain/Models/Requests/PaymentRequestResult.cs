@@ -39,9 +39,11 @@ public class PaymentRequestResult
     public CustomerResponse Customer { get; set; }
 
     public PaymentResponseBalances Balances { get; set; }
+    */
 
     public DateTime? ProcessedOn { get; set; }    
 
+    /*
     public PaymentProcessing Processing { get; set; }
 
     public string Eci { get; set; }

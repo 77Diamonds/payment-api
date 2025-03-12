@@ -17,6 +17,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Seventy7Diamonds.Payments.Domain\Seventy7Diamonds.Payments.Domain.csproj" />
+      <ProjectReference Include="..\Seventy7Diamonds.Payments.Infrastructure\Seventy7Diamonds.Payments.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>

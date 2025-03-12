@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Abstractions;
 using Seventy7Diamonds.Payments.Api.Models;
 using Seventy7Diamonds.Payments.Application.Payments.Commands.CardPayments;
-using Seventy7Diamonds.Payments.Application.Payments.Queries.CardPayments;
+using Seventy7Diamonds.Payments.Application.Payments.Queries.GetPaymentSatus;
 using SeventySevenDiamonds.Payments.Domain.Models.Requests;
 
 namespace Seventy7Diamonds.Payments.Api.Controllers

@@ -9,6 +9,7 @@
     depends_on:
       - redis
       - postgres
+      - rabbitmq
       
   redis:
     image: redis:alpine
