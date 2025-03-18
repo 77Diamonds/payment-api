@@ -11,10 +11,10 @@ public class CardPaymentCommandHandler(
     IPaymentService paymentService,
     IPublisher messagePublisher,
     PaymentDbContext paymentDbContext)
-    : IRequestHandler<CardPaymentCommand, CardPaymentCommandResult>
+    : IRequestHandler<CardPaymentCommand, PaymentCommandResult>
 {
 
-    public async Task<CardPaymentCommandResult> Handle(CardPaymentCommand command, CancellationToken cancellationToken)
+    public async Task<PaymentCommandResult> Handle(CardPaymentCommand command, CancellationToken cancellationToken)
     {
         var request = command.ToRequest();
 
@@ -28,6 +28,7 @@ public class CardPaymentCommandHandler(
             Request = JsonSerializer.Serialize(request),
             Response = JsonSerializer.Serialize(response)
         }, cancellationToken);
+        await paymentDbContext.SaveChangesAsync(cancellationToken);
         
         // notify other systems
         await messagePublisher.Publish(new CardPaymentRequestSentEvent(

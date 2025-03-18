@@ -6,9 +6,9 @@ namespace Seventy7Diamonds.Payments.Application.Payments.Commands.Extensions;
 
 public static class PaymentRequestResultExtensions
 {
-    public static CardPaymentCommandResult ToCardPaymentCommandResult(this PaymentRequestResult request)
+    public static PaymentCommandResult ToCardPaymentCommandResult(this PaymentRequestResult request)
     {
-        return new CardPaymentCommandResult()
+        return new PaymentCommandResult()
         {
             Id = request.Id,
             PaymentType =  request.PaymentType,

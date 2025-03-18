@@ -1,5 +1,7 @@
 ﻿using Checkout;
 using Checkout.Payments;
+using Checkout.Payments.Request;
+using Checkout.Payments.Request.Source;
 using Microsoft.Extensions.Options;
 using Seventy7Diamonds.Payment.Infrastructure.Extensions;
 using Seventy7Diamonds.Payment.Infrastructure.Options;
