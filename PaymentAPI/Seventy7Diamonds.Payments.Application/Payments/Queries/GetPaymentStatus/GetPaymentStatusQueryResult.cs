@@ -1,7 +1,6 @@
-﻿using Seventy7Diamonds.Payments.Application.Payments.Commands.CardPayments;
-using SeventySevenDiamonds.Payments.Domain.Models.Requests;
+﻿using SeventySevenDiamonds.Payments.Domain.Models.Requests;
 
-namespace Seventy7Diamonds.Payments.Application.Payments.Queries.GetPaymentSatus;
+namespace Seventy7Diamonds.Payments.Application.Payments.Queries.GetPaymentStatus;
 
 public record GetPaymentStatusQueryResult
 {

@@ -2,7 +2,7 @@
 using MediatR;
 using SeventySevenDiamonds.Payments.Domain.Interfaces;
 
-namespace Seventy7Diamonds.Payments.Application.Payments.Queries.GetPaymentSatus;
+namespace Seventy7Diamonds.Payments.Application.Payments.Queries.GetPaymentStatus;
 
 public class GetPaymentStatusQuery : IRequest<GetPaymentStatusQueryResult>
 {
