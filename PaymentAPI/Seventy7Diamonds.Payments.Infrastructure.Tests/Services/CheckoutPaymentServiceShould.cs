@@ -192,7 +192,7 @@ public class CheckoutPaymentServiceShould
         // assert
         Assert.Equal(HttpStatusCode.OK, details.httpCode);
         Assert.Equal(response.Id, details.data?.Id);
-        Assert.Equal(response.Status, details.data?.Status);
+        Assert.Equal(response.Status.ToString(), details.data?.Status);
 
     }
     

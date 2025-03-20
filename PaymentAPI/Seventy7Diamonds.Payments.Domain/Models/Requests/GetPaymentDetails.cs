@@ -2,13 +2,13 @@
 
 public class GetPaymentDetails
 {
-    public string Id { get; set; }
+    public string? Id { get; set; }
     
-    public string SchemeId { get; set; }
+    public string? SchemeId { get; set; }
 
     public DateTime? RequestedOn { get; set; }
 
-    public string ProcessedOn { get; set; }
+    public string? ProcessedOn { get; set; }
     
     public long? Amount { get; set; }
 
@@ -18,9 +18,9 @@ public class GetPaymentDetails
     
     public string? PaymentType { get; set; }
     
-    public string Reference { get; set; }
+    public string? Reference { get; set; }
 
-    public string Description { get; set; }
+    public string? Description { get; set; }
 
     public bool? Approved { get; set; }
 
