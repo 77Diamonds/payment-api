@@ -1,7 +1,4 @@
-﻿using SeventySevenDiamonds.Payments.Domain.Models.Common;
-using SeventySevenDiamonds.Payments.Domain.Models.PaymentSource;
-
-namespace SeventySevenDiamonds.Payments.Domain.Models.Requests;
+﻿namespace SeventySevenDiamonds.Payments.Domain.Models.Requests;
 
 public class GetPaymentDetails
 {
@@ -17,9 +14,9 @@ public class GetPaymentDetails
 
     public long? AmountRequested { get; set; }
     
-    public Currency? Currency { get; set; }
+    public string? Currency { get; set; }
     
-    public PaymentSourceType? PaymentType { get; set; }
+    public string? PaymentType { get; set; }
     
     public string Reference { get; set; }
 
@@ -29,6 +26,6 @@ public class GetPaymentDetails
 
     public DateTime? ExpiresOn { get; set; }
 
-    public PaymentStatus? Status { get; set; }
+    public string? Status { get; set; }
     
 }

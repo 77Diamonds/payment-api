@@ -3,6 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Seventy7Diamonds.Payment.Infrastructure.Database;
+using Seventy7Diamonds.Payment.Infrastructure.Options;
+using Seventy7Diamonds.Payment.Infrastructure.Services.CheckoutDotCom;
+using SeventySevenDiamonds.Payments.Domain.Interfaces;
 
 namespace Seventy7Diamonds.Payment.Infrastructure;
 
@@ -21,6 +24,8 @@ public static class ConfigureServices
         this IServiceCollection services,
         IConfiguration configuration)
     {
+        services.AddTransient<IPaymentService, PaymentService>();
+        
         services.AddDbContext<PaymentDbContext>(options =>
         {
             options.UseNpgsql(configuration.GetConnectionString("Postgres"));
@@ -37,6 +42,7 @@ public static class ConfigureServices
                 });
             });
         });
+        
 
         return services;
     }

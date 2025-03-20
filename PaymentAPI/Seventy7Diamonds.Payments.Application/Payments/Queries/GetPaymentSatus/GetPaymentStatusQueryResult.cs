@@ -3,10 +3,16 @@ using SeventySevenDiamonds.Payments.Domain.Models.Requests;
 
 namespace Seventy7Diamonds.Payments.Application.Payments.Queries.GetPaymentSatus;
 
-public record GetPaymentStatusQueryResult(
-    GetPaymentStatusQueryResult.Status Result, 
-    GetPaymentDetails? PaymentDetails)
+public record GetPaymentStatusQueryResult
 {
+
+    public GetPaymentStatusQueryResult(
+        Status result,
+        GetPaymentDetails? paymentDetails)
+    {
+        Result = result;
+        PaymentDetails = paymentDetails;
+    }
     
     public Status Result { get; set; }
     public GetPaymentDetails? PaymentDetails { get; set; }

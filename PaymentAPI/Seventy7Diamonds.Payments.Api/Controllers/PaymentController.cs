@@ -27,11 +27,23 @@ namespace Seventy7Diamonds.Payments.Api.Controllers
             return Ok(result);
         }
 
-        [HttpGet, Route("{PaymentId}")]
-        public async Task<IActionResult> GetPaymentDetails([FromRoute] string paymentId)
+        /// <summary>
+        /// Gets the status information of a payment transaction. 
+        /// </summary>
+        /// <param name="paymentId">The PaymentId returned when the transaction was created</param>
+        /// <returns></returns>
+        [HttpGet("{paymentId}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<GetPaymentDetails>> GetPaymentDetails([FromRoute] string paymentId)
         {
             var result = await _mediator.Send(new GetPaymentStatusQuery(){ PaymentId = paymentId});
-            throw new NotImplementedException();
+            return result.Result switch
+            {
+                GetPaymentStatusQueryResult.Status.NotFound => NotFound(),
+                GetPaymentStatusQueryResult.Status.Success => Ok(result.PaymentDetails),
+                _ => BadRequest()
+            };
         }
     }
 }

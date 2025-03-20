@@ -13,7 +13,6 @@ public class GetPaymentStatusQueryHandler(
     IPaymentService paymentService) 
     : IRequestHandler<GetPaymentStatusQuery, GetPaymentStatusQueryResult>
 {
-    
     public async Task<GetPaymentStatusQueryResult> Handle(GetPaymentStatusQuery request, CancellationToken cancellationToken)
     {
         var response = await paymentService.GetPaymentDetails(request.PaymentId, cancellationToken);

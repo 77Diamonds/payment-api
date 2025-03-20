@@ -2,6 +2,8 @@
 
 public sealed class CheckoutOptions
 {
+    public const string SectionName = "Checkout";
+    
     public CheckoutOptions(){}
     
     public required string SecretKey { get; set; }

@@ -17,13 +17,13 @@ public static class GetPaymentResponseExtensions
             ProcessedOn = response.ProcessedOn,
             Amount = response.Amount,
             AmountRequested = response.AmountRequested,
-            Currency = (Currency?)response.Currency,
-            PaymentType = (PaymentSourceType?)response.PaymentType,
+            Currency = response.Currency.ToString(),
+            PaymentType = response.PaymentType.ToString(),
             Reference = response.Reference,
             Description = response.Description, 
             Approved = response.Approved,
             ExpiresOn = response.ExpiresOn,
-            Status = (PaymentStatus?)response.Status,
+            Status = response.Status.ToString(),
         };
     }
 }
