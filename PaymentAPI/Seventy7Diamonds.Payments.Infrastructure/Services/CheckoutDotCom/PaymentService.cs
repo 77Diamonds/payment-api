@@ -1,4 +1,5 @@
-﻿using Checkout;
+﻿using System.Net;
+using Checkout;
 using Checkout.Payments;
 using Checkout.Payments.Request;
 using Checkout.Payments.Request.Source;
@@ -37,10 +38,17 @@ public class PaymentService : IPaymentService
         return response.ToPaymentRequestResult();
     }
 
-    public async Task<GetPaymentDetails> GetPaymentDetails(string paymentId, 
+    public async Task<(HttpStatusCode httpCode,GetPaymentDetails? data)> GetPaymentDetails(string paymentId, 
         CancellationToken cancellationToken)
     {
-        var response = await _paymentsApi.GetPaymentDetails(paymentId, cancellationToken);
-        return response.ToGetPaymentDetails();
+        try
+        {
+            var response = await _paymentsApi.GetPaymentDetails(paymentId, cancellationToken);
+            return ((HttpStatusCode)response.HttpStatusCode!, response.ToGetPaymentDetails());
+        }
+        catch (CheckoutApiException ex)
+        {
+            return (ex.HttpStatusCode, null);
+        }
     }
 }

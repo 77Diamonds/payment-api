@@ -1,3 +1,4 @@
+using System.Net;
 using Microsoft.Extensions.Options;
 using Moq;
 using Seventy7Diamonds.Payment.Infrastructure.Options;
@@ -189,9 +190,25 @@ public class CheckoutPaymentServiceShould
         var details = await paymentService.GetPaymentDetails(response.Id, CancellationToken.None);
         
         // assert
-        Assert.NotNull(details);
-        Assert.Equal(response.Id, details.Id);
-        Assert.Equal(response.Status, details.Status);
+        Assert.Equal(HttpStatusCode.OK, details.httpCode);
+        Assert.Equal(response.Id, details.data?.Id);
+        Assert.Equal(response.Status, details.data?.Status);
+
+    }
+    
+    [Fact]
+    public async Task Return_not_found_when_getting_invalid_transaction_details()
+    {
+        // arrange
+        var paymentService = new PaymentService(_mockOptions.Object);
+        var paymentId = Guid.Empty.ToString();
+        
+        // act
+        var response = await paymentService.GetPaymentDetails(paymentId, CancellationToken.None);
+        
+        // assert
+        Assert.Null(response.data);
+        Assert.Equal(HttpStatusCode.NotFound, response.httpCode);
 
     }
 }

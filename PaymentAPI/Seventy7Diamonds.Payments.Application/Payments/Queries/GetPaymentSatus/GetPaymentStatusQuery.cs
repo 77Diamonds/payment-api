@@ -1,4 +1,6 @@
-﻿using MediatR;
+﻿using System.Net;
+using MediatR;
+using SeventySevenDiamonds.Payments.Domain.Interfaces;
 
 namespace Seventy7Diamonds.Payments.Application.Payments.Queries.GetPaymentSatus;
 
@@ -7,13 +9,20 @@ public class GetPaymentStatusQuery : IRequest<GetPaymentStatusQueryResult>
     public required string PaymentId { get; set; }
 }
 
-public enum GetPaymentStatusQueryResult {}
-
-
-public class GetPaymentStatusQueryHandler : IRequestHandler<GetPaymentStatusQuery, GetPaymentStatusQueryResult>
+public class GetPaymentStatusQueryHandler(
+    IPaymentService paymentService) 
+    : IRequestHandler<GetPaymentStatusQuery, GetPaymentStatusQueryResult>
 {
-    public Task<GetPaymentStatusQueryResult> Handle(GetPaymentStatusQuery request, CancellationToken cancellationToken)
+    
+    public async Task<GetPaymentStatusQueryResult> Handle(GetPaymentStatusQuery request, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        var response = await paymentService.GetPaymentDetails(request.PaymentId, cancellationToken);
+        
+        if (response.httpCode == HttpStatusCode.NotFound)
+            return GetPaymentStatusQueryResult.NotFound();
+        
+        return response.data == null 
+            ? GetPaymentStatusQueryResult.UnknownError() 
+            : GetPaymentStatusQueryResult.Success(response.data);
     }
 }
